@@ -90,8 +90,6 @@ const squareClick = (column, row) => {
     console.log(board);
 
     isRowSame(board);
-
-    // isRowSame(board);
     // console.log(isRowSame(board));
     // change the player
     togglePlayer();
@@ -113,34 +111,78 @@ const squareClick = (column, row) => {
 
 // function to check all horizontal is the same
 let matchFound;
-let tempArray = [];
+
 function isRowSame(currentBoard) {
-  let matchFound = false;
+let matchFound = false;
+let tempArray = [];
+
   for (i = 0; i < currentBoard.length; i++) {
+    tempArray = [];
     for (j = 0; j < currentBoard.length; j++) {
-      // only look for values which is non empty
-      if (currentBoard[i] != "") {
-        tempArray.push(currentBoard[i][j]);
+      tempArray.push(currentBoard[i][j]);     
+    }
+    console.log(tempArray)
+    // isEmpty (tempArray)
+
+    // looking for empty spaces
+  for (k = 0; k < tempArray.length; k++) {
+      console.log(tempArray)
+      if (tempArray[k] === "") {
+        output = "found"
+        console.log(output)
+    
+
+      } else {
+        output = "not found"
+        console.log(output)
+        
       }
     }
-    if (isEqual(tempArray) == true) {
-      matchFound = true;
-    }
-    console.log(matchFound);
-    return matchFound;
-  }
-}
 
-// functiont to check if all the elements in an array is same or different
-function isEqual(array) {
-  for (i = 0; i < array.length - 1; i++) {
-    if (array[i] != array[i + 1]) {
-      return false;
     }
-    return true;
   }
-}
-// function to check if all the vertical is the same
+
+
+function isEmpty(array) {
+  for (i = 0; i < array.length; i++) {
+    if (array[i] === "") {
+      output = "found"
+      console.log("empty found")
+      return output
+    }
+    output = "not found"
+    console.log("empty NOT found")
+    return output
+  } 
+
+} 
+
+    // console.log(isEmpty(tempArray))
+  // // if the array has "" elements:
+
+  //   if (isEmpty(tempArray) === true ) {
+            
+
+  //   } else if (isEqual(tempArray) == true) {
+  //       matchFound = true;
+  //       console.log(matchFound);
+  //       return matchFound;
+
+  //     } 
+  //   }
+
+
+
+//function to check if all the elements in an array is same or different
+// function isEqual(array) {
+//   for (i = 0; i < array.length - 1; i++) {
+//     if (array[i] != array[i + 1]) {
+//       return false;
+//     }
+//     return true;
+//   }
+// }
+//function to check if all the vertical is the same
 
 // function isColumnSame(board) {
 //   let matchFound = false;
@@ -178,5 +220,18 @@ function isEqual(array) {
 //   rightLeftArray = [];
 //   return matchFound;
 // }
+
+//checking if the value in an array is empty
+// function isEmpty(array) {
+//   for (i = 0; i < array.length; i++) {
+
+//     if (array[i] === "") {
+//       return true;
+//     }
+
+//      return false;
+//   } 
+
+// } 
 
 initGame();

@@ -11,3 +11,35 @@ body {
   width: 10px;
   vertical-align: top;
 }
+
+.inputClass {
+  color: red;
+  padding: 10px;
+}
+
+.display {
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+}
+
+.button {
+  margin: 10px;
+  padding: 10px;
+}
+
+.green {
+  color: green;
+}
+
+.red {
+  color: red;
+}
+
+.yellow {
+  color: black;
+}
+
+.blue {
+  color: blue;
+}
